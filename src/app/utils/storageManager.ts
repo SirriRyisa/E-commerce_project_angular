@@ -7,16 +7,12 @@ interface Product {
   }
 
 export const setCart = (product: Product) => {
-    let cartItems: [] = getCart();
-    // localStorage.setItem('cart', [ ...cartItems, product ])
-    console.log(product);
-
-    cartItems.push(  )
-
-    console.log(cartItems);
-
+    let cartItems = getCart() as Product[];
+    cartItems.push(product)
+    localStorage.setItem('cart', JSON.stringify(cartItems))
 }
 
 export const getCart = () => {
-    return JSON.parse(localStorage.getItem('cart') || '[]');;
+    const cart = localStorage.getItem('cart');
+    return cart ? JSON.parse(cart) : [];
 }
