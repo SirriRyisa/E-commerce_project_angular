@@ -1,5 +1,5 @@
 <ng-container *ngIf="status">
-        <div class="container">
+        <div class="cart-height">
             <div class="card-table">
                 <div class="card-product">
                     <table class="table table-responsive">
@@ -8,25 +8,32 @@
                                 <th>Sr.No</th>
                                 <th>Product Name</th>
                                 <th>Product Image</th>
-                                <th>Description</th>
-                                <th>price</th>
-                                <th>Quality</th>
-                                <th>Total</th>
+                                <th style="width: 25%;">Description</th>
+                                <th style="width: 12%;">Quantity</th>
+                                <th style="width: 12%;">price</th>
+                                <th style="width: 12%;">Total</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Iphone</td>
-                                <td>Some Image</td>
-                                <td>Female Clothes</td>
-                                <td>250,000</td>
-                                <td>1</td>
-                                <td>250,000</td>
+                           
+                            <tr *ngFor="let cart of updatedCartItems; let i = index ">
+                                <td></td>
+                                <td>{{ cart.id }}</td>
+                                <td>{{ cart.image }}</td>
+                                <td>{{ cart.description }}</td>
+                                <td>{{ cart.quantity }}</td>
+                                <td>{{ cart.price }}</td>
+                                <td>{{ cart.subtotal }}</td>
                                 <td>
                                     <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                                 </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"></td>
+                                <td><button class="btn btn-danger">Empty Cart</button></td>
+                                <td><button class="btn btn-primary">Shop More</button></td>
+                                <td><button  class="btn btn-success"> <a href="https://wa.me/237652636242?text=I'm%20interested%20in%20your%20car%20for%20sale" style="text-decoration: none; color: white">Pay Now</a> </button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -35,7 +42,7 @@
     </div>
 </ng-container>
 
-<ng-container *ngIf="status">
+<ng-container *ngIf="!status">
     <div class="container">
         <div class="card">
             <h5 class="card-title">My Cart</h5>
@@ -44,7 +51,7 @@
             <img src="assets/shopNow.jpg" alt="">
             <h4>Your card is empty</h4>
             <h6>Add item now</h6>
-            <button class="btn btn-primary">Shop Now!!!</button>
+            <button routerLink="/product" class="btn btn-primary">Shop Now!!!</button>
         </div>
     </div>
     

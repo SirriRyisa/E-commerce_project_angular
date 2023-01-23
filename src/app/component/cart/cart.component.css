@@ -1,8 +1,11 @@
-.card{
-    height: 85vh;
-    margin: 25px;
-    padding: 25px;
 
+.cart-height{
+    height: 100vh;
+}
+
+.card{
+    height: 100vh;
+    margin: 25px;
 }
 
 .center{

@@ -1,0 +1,16 @@
+footer {
+    background-color: grey;
+    padding: 1rem 0;
+    color: white;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+  }
+
+  h5 {
+    color: pink;
+  }
+  
+  .list-unstyled li a {
+    color: white;
+  }

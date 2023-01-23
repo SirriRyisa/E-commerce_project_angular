@@ -13,17 +13,19 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { environment } from './environments/environment';
 import { ApiService } from "./service/api.service";
+import { FooterComponent } from './component/footer/footer.component';
 
 
 const routes: Routes = [
     {path: "", redirectTo: "product", pathMatch:"full"},
     {path:"product", component: ProductComponent},
-    {path: "cart", component: CartComponent}
+    {path: "cart", component: CartComponent},
+    {path: "footer", component: FooterComponent}
   ]
 
 @NgModule({
     // declarations helps to define the app componnet as seen below
-    declarations: [AppComponent, ProductComponent, HearComponent, CartComponent],
+    declarations: [AppComponent, ProductComponent, HearComponent, CartComponent, FooterComponent],
     imports: [
         BrowserModule,
         HttpClientModule,
@@ -37,7 +39,7 @@ const routes: Routes = [
 
     providers: [
         { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
-        ApiService
+        // ApiService
     ],
 
     bootstrap: [AppComponent]
